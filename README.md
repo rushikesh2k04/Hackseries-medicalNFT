@@ -1,95 +1,117 @@
-# 🏥 Medical NFT – Prescription as a Token
+🏥 Medical NFT – Prescription as a Token
+Medical NFT is a decentralized platform that enables doctors to mint verifiable prescriptions as Non-Fungible Tokens (NFTs) on the Algorand blockchain. It ensures secure, tamper-proof, and traceable prescription delivery using smart contracts written in PyTeal, with frontend integration using algosdk.
 
-A decentralized Web3-based platform enabling doctors to securely mint verifiable medical prescriptions as NFTs (Non-Fungible Tokens) and transfer them directly to patients' wallets.
+🚀 Features
+✅ Doctor Verified NFT Minting
 
----
+Each prescription is minted as an NFT (Algorand Standard Asset)
 
-## 🔍 Overview
+Includes:
 
-**Medical NFT** transforms the way prescriptions are issued, verified, and shared. Using blockchain and IPFS, this platform ensures secure, tamper-proof, and traceable digital prescriptions that patients can own, access, and share seamlessly.
+Asset name, title, description
 
----
+PDF link of the signed prescription
 
-## 🧩 Key Features
+Patient's wallet address
 
-- **✅ Doctor Verified NFT Minting**
-  - Asset Name (e.g., “Prescription #001”)
-  - Title (e.g., “Dr. John’s Prescription for Diabetes”)
-  - Description (brief summary)
-  - PDF Upload (signed prescription)
-  - Patient Wallet Address
+Total supply of 1, zero decimals (indivisible)
 
-- **🔗 Decentralized File Storage**
-  - Prescription PDF stored on IPFS
-  - IPFS hash embedded in NFT metadata
+✅ Secure IPFS Storage
 
-- **📤 NFT Transfer to Patient**
-  - Automatically transferred upon minting
-  - Full ownership & access granted to the patient
+Prescriptions are uploaded to IPFS (e.g., via Pinata)
 
-- **🔒 Secure & Immutable**
-  - On-chain record, tamper-proof
-  - Doctor identity verified (KYC, digital signature)
+IPFS hash is embedded in the ASA metadata
 
-- **🔄 Interoperability**
-  - Compliant with ARC-3 (Algorand)
-  - Compatible with wallets like MetaMask, WalletConnect, and Pera Wallet
+✅ NFT Transfer to Patient
 
----
+Automatically sent to the patient’s wallet after minting
 
-## 🧠 Use Cases
+✅ Immutable Medical Records
 
-- Remote consultations  
-- Chronic disease prescription tracking  
-- Fraud prevention in medical documentation  
-- Inter-doctor collaboration  
-- Immutable patient prescription history
+On-chain, tamper-proof record of prescriptions
 
----
+Doctor identity verification supported 
 
-## ⚙️ Tech Stack
+✅ ARC-3 Compliant
 
-| Layer         | Technology                             |
-|---------------|-----------------------------------------|
-| Frontend      | React.js + Web3.js / Ethers.js          |
-| Backend       | Node.js / Express.js                    |
-| Smart Contracts | PyTeal (ARC-3) |
-| Blockchain    |  Algorand           |
-| File Storage  | IPFS (InterPlanetary File System)       |
-| Wallets       |  Pera Wallet,Defly wallet,Exodus Wallet,Daffi Wallet    |
-| Security      | Signature verification, Wallet Auth     |
+Compatible with major Algorand wallets for seamless access and sharing
 
----
+🔗 Workflow
+Doctor Login
+Doctors connect their wallet or log in via organization credentials
 
-## 🔁 Workflow
+Prescription Upload
+Doctors enter the title, description, upload the signed PDF, and specify the patient’s wallet address
 
-1. **Doctor Login:** Via Web3 wallet or organization credentials  
-2. **Input Prescription:** Fill form, upload signed PDF, enter patient wallet address  
-3. **Mint NFT:** Prescription stored on IPFS → NFT created with metadata  
-4. **Transfer NFT:** Automatically sent to patient’s wallet  
-5. **Patient Access:** View/download PDF, or share with other professionals  
+NFT Minting
+PDF is uploaded to IPFS → Metadata is embedded → NFT is minted on Algorand
 
----
+NFT Transfer
+The prescription NFT is automatically transferred to the patient’s wallet
 
-## ✅ Benefits
+Patient Access
+Patients can view, download, or share the prescription from their wallet
 
-- **Tamper-proof:** Immutable blockchain record  
-- **One-click Sharing:** Easily forward prescription to pharmacies or specialists  
-- **Transparency:** Doctor attribution is verifiable and logged  
-- **Ownership:** Patients retain full control of their health data  
+💻 Technologies Used
+Layer	Technology
+Blockchain	Algorand
+Smart Contract	PyTeal
+ABI Interface	ARC3
+NFT Minting	algosdk
+Wallets	Pera Wallet, Defly Wallet, Exodus Wallet, Daffi Wallet
+File Storage	IPFS / Pinata
+Frontend	React.js + algosdk
+Security	Wallet Auth
 
----
+📂 Project Structure
+bash
+Copy
+Edit
+/medicalnft-contracts
+  └── medinft/contract.py       # Smart contract in PyTeal
+/medicalnft-frontend
+  └── src                       # NFT minting logic
+        └── pages
+            └── MarkeplacePage.tsx
+            └── MedicalservicesPage.tsx
+        └── Home.tsx
+        └── App.tsx                   # Main UI for doctors and patients
+🧠 Smart Contract Functions
+Function	Description
+create_prescription(asset_metadata)	Mint a prescription NFT and send to patient
+delete_prescription()	Allow deletion of invalid or expired records (if applicable)
 
-## 🚀 Getting Started
+🛠 Prerequisites
+Python + PyTeal for smart contract development
 
-### Prerequisites
+Node.js + algosdk for frontend
 
-- Node.js & npm
-- IPFS (e.g., via Pinata or Infura)
+Testnet ALGO from Algorand Faucet
 
-### Installation
+Wallet setup (Pera Wallet, Defly Wallet, etc.)
 
-```bash
+IPFS storage setup (Pinata, Web3.Storage)
+
+📦 Installation & Setup
+bash
+Copy
+Edit
+# Clone the repository
 git clone https://github.com/rushikesh2k04/Hackseries-medicalNFT.git
 cd projects
-npm install
+
+Doctor dashboard with prescription history
+
+Patient dashboard with NFT viewer and access logs
+
+Expiry dates or revocation mechanism for prescriptions
+
+Integration with pharmacy APIs for direct order placement
+
+✨ Author
+Rushikesh – Blockchain Developer,FullStack
+Connect: rushikesh9.2004@gmail.com
+
+💡 Inspiration
+Medical NFT leverages blockchain’s transparency and immutability to redefine how prescriptions are issued and managed. It ensures that patients receive secure, verifiable medical records while giving doctors a modern, tamper-proof platform for prescription management.
+
